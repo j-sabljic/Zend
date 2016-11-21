@@ -13,15 +13,15 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 
 class ListControllerFactory implements FactoryInterface
 {
-    /**
-     * Create service
-     *
+	/**
+	 * Create service
+	 *
 	 * @param ServiceLocatorInterface $serviceLocator
 	 *
 	 * @return mixed
 	 */
-	 public function createService(ServiceLocatorInterface $serviceLocator)
-	 {
+	public function createService(ServiceLocatorInterface $serviceLocator)
+	{
 		$realServiceLocator = $serviceLocator->getServiceLocator();
 		$postService        = $realServiceLocator->get('Blog\Service\PostServiceInterface');
 

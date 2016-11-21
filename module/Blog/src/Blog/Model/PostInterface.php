@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jovana.sabljic
- * Date: 11/18/2016
- * Time: 11:48 AM
- */
 
 namespace Blog\Model;
 

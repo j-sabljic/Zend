@@ -1,12 +1,11 @@
 <?php
-
 namespace Blog\Service;
 
-use Blog\Model\Post;
+use Blog\Model\PostInterface;
 
 interface PostServiceInterface
 {
-    public function findAllPosts();
+	public function findAllPosts();
 
-    public function findPost($id);
+	public function findPost($id);
 }
