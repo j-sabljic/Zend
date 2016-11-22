@@ -32,11 +32,11 @@ return array(
 			'blog' => array(
 			   'type' => 'literal',
 				'options' => array(
-					'route'    => '/jovana/blog',
+					'route'    => '/blog',
 					'defaults' => array(
 					'controller' => 'Blog\Controller\List',
 					'action'     => 'index',
-					),
+					)
 				),
 				'may_terminate' => true,
 				'child_routes'  => array(
@@ -50,20 +50,33 @@ return array(
 							'constraints' => array(
 								'id' => '[1-9]\d*'
 							)
-						),
+						)
 					),
 					'add' => array(
-						'type' => 'segment',
+						'type' => 'literal',
 						'options' => array(
 							'route'    => '/add',
 							'defaults' => array(
 								'controller' => 'Blog\Controller\Write',
 								'action'     => 'add'
-							),
-						),
+							)
+						)
 					),
+					'edit' => array(
+						'type' => 'segment',
+						'options' => array(
+							'route'    => '/edit/:id',
+							'defaults' => array(
+								'controller' => 'Blog\Controller\Write',
+								'action'     => 'edit'
+							),
+							'constraints' => array(
+								'id' => '\d+'
+							)
+						)
+					)
 				)
-			),
+			)
 		)
 	)
 );
