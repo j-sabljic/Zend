@@ -10,4 +10,6 @@ interface PostServiceInterface
 	public function findPost($id);
 
 	public function savePost(PostInterface $blog);
+
+	public function deletePost(PostInterface $blog);
 }

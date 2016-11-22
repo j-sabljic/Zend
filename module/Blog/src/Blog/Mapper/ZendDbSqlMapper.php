@@ -11,6 +11,7 @@ use Blog\Model\PostInterface;
 use Zend\Db\Adapter\AdapterInterface;
 use Zend\Db\Adapter\Driver\ResultInterface;
 use Zend\Db\ResultSet\HydratingResultSet;
+use Zend\Db\Sql\Delete;
 use Zend\Db\Sql\Insert;
 use Zend\Db\Sql\Sql;
 use Zend\Db\Sql\Update;
@@ -126,5 +127,17 @@ class ZendDbSqlMapper implements PostMapperInterface
 		}
 
 		throw new \Exception("Database error");
+	}
+
+	public function delete(PostInterface $postObject)
+	{
+		$action = new Delete('posts');
+		$action->where(array('id = ?' => $postObject->getId()));
+
+		$sql    = new Sql($this->dbAdapter);
+		$stmt   = $sql->prepareStatementForSqlObject($action);
+		$result = $stmt->execute();
+
+		return (bool)$result->getAffectedRows();
 	}
 }

@@ -18,9 +18,6 @@ class PostService implements PostServiceInterface
 		return $this->postMapper->findAll();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	public function findPost($id)
 	{
 		return $this->postMapper->find($id);
@@ -29,5 +26,10 @@ class PostService implements PostServiceInterface
 	public function savePost(PostInterface $post)
 	{
 		return $this->postMapper->save($post);
+	}
+
+	public function deletePost(PostInterface $post)
+	{
+		return $this->postMapper->delete($post);
 	}
 }
