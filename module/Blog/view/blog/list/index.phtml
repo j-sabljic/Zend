@@ -1,10 +1,24 @@
-<h1>Blog</h1>
+<h1>Posts</h1>
 
-<?php foreach ($this->posts as $post): ?>
-	<article>
-		<h1 id="post<?= $post->getId() ?>"><?= $post->getTitle() ?></h1>
-		<p>
-			<?= $post->getText() ?>
-		</p>
-	</article>
+<p>
+	<a href="<?php echo $this->url('blog/add', array('action'=>'add'));?>">Add new post</a>
+</p>
+
+<table class="table">
+	<tr>
+		<th>Title</th>
+		<th>Text</th>
+		<th>&nbsp;</th>
+	</tr>
+
+<?php foreach ($this->posts as $post) : ?>
+	<tr>
+		<td id="post<?= $post->getId() ?>"><?= $post->getTitle() ?></td>
+		<td><?= $post->getText() ?></td>
+		<td>
+			<a href="<?php echo $this->url('blog/edit', array('action'=>'delete', 'id' => $post->getId()));?>">Edit</a>
+			<a href="<?php echo $this->url('blog/delete', array('action'=>'delete', 'id' => $post->getId()));?>">Delete</a>
+		</td>
+	</tr>
 <?php endforeach ?>
+</table>

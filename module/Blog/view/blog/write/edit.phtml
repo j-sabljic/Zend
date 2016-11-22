@@ -1,9 +1,9 @@
 <h1>Edit post</h1>
 <?php
 $form = $this->form;
+
 $form->setAttribute('action', $this->url('blog/edit', array(), true));
-// Post je po default-u, ako zelimo GET
-// $form->setAttribute('method', 'GET');
+
 $form->prepare();
 
 $form->get('submit')->setValue('Update Post');

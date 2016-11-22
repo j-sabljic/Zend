@@ -1,9 +1,9 @@
 <h1>Add post</h1>
 <?php
 $form = $this->form;
+
 $form->setAttribute('action', $this->url());
-// Post je po default-u, ako zelimo GET
-// $form->setAttribute('method', 'GET');
+
 $form->prepare();
 
 echo $this->form()->openTag($form);
