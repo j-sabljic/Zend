@@ -37,7 +37,7 @@ return array(
 					'action'     => 'index',
 					),
 				),
-				'may_terminate' => false,
+				'may_terminate' => true,
 				'child_routes'  => array(
 					'detail' => array(
 						'type' => 'segment',
