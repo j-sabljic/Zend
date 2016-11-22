@@ -38,9 +38,4 @@ class ListController extends AbstractActionController
 			'post' => $post
 		));
 	}
-
-	public function addAction()
-	{
-		return new ViewModel();
-	}
 }

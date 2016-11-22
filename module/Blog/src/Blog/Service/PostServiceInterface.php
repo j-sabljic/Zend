@@ -8,4 +8,6 @@ interface PostServiceInterface
 	public function findAllPosts();
 
 	public function findPost($id);
+
+	public function savePost(PostInterface $blog);
 }
