@@ -27,21 +27,41 @@ return array(
 		),
 	),
 	'router' => array(
-		// Open configuration for all possible routes
 		'routes' => array(
-			// Define a new route called "post"
-			'post' => array(
+			'blog' => array(
 			   'type' => 'literal',
-				// Configure the route itself
 				'options' => array(
-					// Listen to "/blog" as uri
-					'route'    => '/blog',
-						 'defaults' => array(
-						'controller' => 'Blog\Controller\List',
-						'action'     => 'index',
-					)
+					'route'    => '/jovana/blog',
+					'defaults' => array(
+					'controller' => 'Blog\Controller\List',
+					'action'     => 'index',
+					),
+				),
+				'may_terminate' => false,
+				'child_routes'  => array(
+					'detail' => array(
+						'type' => 'segment',
+						'options' => array(
+							'route'    => '/:id',
+							'defaults' => array(
+								'action' => 'detail'
+							),
+							'constraints' => array(
+								'id' => '[1-9]\d*'
+							)
+						),
+					),
+					'add' => array(
+						'type' => 'segment',
+						'options' => array(
+							'route'    => '/add',
+							'defaults' => array(
+								'action'     => 'add',
+							),
+						),
+					),
 				)
-			)
+			),
 		)
 	)
 );
