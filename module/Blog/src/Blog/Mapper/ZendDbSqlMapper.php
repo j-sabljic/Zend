@@ -72,7 +72,7 @@ class ZendDbSqlMapper implements PostMapperInterface
 	}
 
 	/**
-	 * @return array|PostInterface[]
+	 * @return array|\Zend\Db\ResultSet\ResultSet
 	 */
 	public function findAll()
 	{
