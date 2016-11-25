@@ -28,13 +28,9 @@ class Post implements PostInterface
 
 	/**
 	 * @param $id
-	 * @throws \Exception
 	 */
 	public function setId($id)
 	{
-		if (!is_int($id)) {
-			throw new \InvalidArgumentException('\Blog\Model\Post::setId expects integer');
-		}
 		$this->id = $id;
 	}
 

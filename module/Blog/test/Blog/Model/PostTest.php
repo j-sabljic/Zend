@@ -27,23 +27,12 @@ class PostTest extends \PHPUnit_Framework_TestCase
 
 	/**
 	 * @test
-	 * @dataProvider invalidIds
-	 * @param $argument
-	 * @expectedException \InvalidArgumentException
-	 */
-	public function testSetIdWithInvalidArguments($argument)
-	{
-		$this->postModel->setId($argument);
-	}
-
-	/**
-	 * @test
 	 */
 	public function testId()
 	{
 		$this->assertNull($this->postModel->getId());
-		$this->postModel->setId(123);
-		$this->assertEquals(123, $this->postModel->getId());
+		$this->postModel->setId(1);
+		$this->assertEquals(1, $this->postModel->getId());
 	}
 
 	public function testTitle()
